@@ -1,0 +1,25 @@
+
+.area{
+    background-color: red;
+    align-items: center;
+    width: 280px;
+    height: 95vh;
+    margin: 5px;
+    border-right-style: solid;
+    border-color: white;
+}
+
+.area fieldset {
+    border-radius: 5px;
+}
+
+.area textarea {
+    width: 100%;
+    height: 60px;
+}
+
+.area select {
+    width: 90%;
+    text-align: center;
+    margin: auto;
+}
