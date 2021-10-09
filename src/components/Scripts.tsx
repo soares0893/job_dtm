@@ -1,5 +1,6 @@
-import { useState } from 'react'
-import style from '../styles/Scripts.module.css'
+
+import style from '../css/Scripts.module.css';
+
 const selectOptions = require('../data/selectOptions')
 
 export default function Scripts() {
