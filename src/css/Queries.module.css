@@ -1,0 +1,17 @@
+
+.area {
+    background-color: greenyellow;
+}
+
+.area fieldset {
+    border-radius: 10px;
+}
+
+.area legend {
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+.area button {
+    float: right;
+}
