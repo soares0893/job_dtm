@@ -6,7 +6,7 @@ import Infos from '../src/components/Infos';
 export default function Home() {
   return (
     <div style={{display: "flex"}}>
-      {/* <Scripts /> */}
+      <Scripts />
       <Queries />
       <div>
         <Menu />

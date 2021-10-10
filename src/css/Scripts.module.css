@@ -1,6 +1,7 @@
 
 .form {
     background-color: orange;
+    margin-right: 5px;
     display: flex;
     width: 300px;
     height: 100vh;

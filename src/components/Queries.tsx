@@ -15,7 +15,7 @@ export default function Queries() {
             data += `${labels[i].innerHTML}: ${inputs[i].value}  \n`
         }
 
-        console.log(data)
+        navigator.clipboard.writeText(data);
         
     }
 
