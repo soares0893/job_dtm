@@ -2,15 +2,32 @@
 .form{
     background-color: orange;
     align-items: center;
-    width: 280px;
-    height: 95vh;
+    width: 300px;
+    height: 100vh;
     margin: 5px;
     border-right-style: solid;
     border-color: white;
 }
 
+.form td:nth-child(odd){
+    background-color: pink;
+    width: 140px;
+}
+
+.form td:nth-child(even){
+    background-color: yellow;
+    width: 10px;
+}
+
+.form input {
+    border: none;
+    width: 160px;
+    border-radius: 5px;
+}
+
 .form fieldset {
     border-radius: 10px;
+    height: 98vh;
 }
 
 .form textarea {
@@ -19,7 +36,8 @@
 }
 
 .form select {
-    width: 90%;
+    width: 100%;
+    margin-right: 2%;
     text-align: center;
     margin: auto;
 }

@@ -33,7 +33,7 @@ export default function Queries() {
             </fieldset><br/>
 
             <fieldset>
-                <legend>⏭️ Envio de Connect p/ unidade
+                <legend>⏭️ Connect p/ unidade
                     <button >&#9986;</button>
                 </legend>
                 <table>

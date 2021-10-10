@@ -4,7 +4,10 @@
 }
 
 .area fieldset {
+    background-color: tomato;
     border-radius: 10px;
+    padding: 0;
+    margin: 3px 0;
 }
 
 .area legend {
@@ -14,4 +17,9 @@
 
 .area button {
     float: right;
+}
+
+.area table {
+    background-color: violet;
+    margin: auto;
 }
