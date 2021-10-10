@@ -1,43 +1,72 @@
 
-.form{
+.form {
     background-color: orange;
-    align-items: center;
+    display: flex;
     width: 300px;
     height: 100vh;
-    margin: 5px;
-    border-right-style: solid;
-    border-color: white;
-}
-
-.form td:nth-child(odd){
-    background-color: pink;
-    width: 140px;
-}
-
-.form td:nth-child(even){
-    background-color: yellow;
-    width: 10px;
-}
-
-.form input {
-    border: none;
-    width: 160px;
-    border-radius: 5px;
 }
 
 .form fieldset {
-    border-radius: 10px;
-    height: 98vh;
+    background-color: tomato;
+    width: 95%;
+    padding: 0;
+    border-radius: 8px;
+    margin: auto;
+    height: 100vh;
 }
 
 .form textarea {
-    width: 100%;
+    max-width: 270px; /*CORRIGIR*/
+    min-width: 270px; /*CORRIGIR*/
     height: 60px;
+    margin: 0 5px;
 }
 
 .form select {
-    width: 100%;
-    margin-right: 2%;
+    width: 270px;
     text-align: center;
-    margin: auto;
+    margin: 0 2.5%;
 }
+
+.tdLabel {
+    background-color: greenyellow;
+    width: 100px;
+}
+.tdLabel label {
+    background-color: turquoise;
+}
+
+.tdInput {
+    background-color: yellow;
+}
+.tdInput input {
+    background-color: violet;
+    border-radius: 5px;
+    border: none;
+    height: 21px;
+}
+
+.trFunctions {
+    /* background-color: black; */
+    border-spacing: 28px 5px;
+}
+
+.tdUra {
+    background-color: whitesmoke;
+    border: 1px solid black;
+    border-radius: 5px;
+
+}
+.tdAmil {
+    background-color: cadetblue;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+

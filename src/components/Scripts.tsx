@@ -14,11 +14,11 @@ export default function Scripts() {
 
 
 
-        function tr(key, value, className) {
+        function tr(key, value, tdLabelClass, tdInputClass) {
             return (
                 <tr key={key}>
-                    <td><label className={className}>{value}</label></td>
-                    <td><input className={className} type="text" /></td>
+                    <td className={tdLabelClass}><label className="formChild">{value}</label></td>
+                    <td className={tdInputClass}><input className="formChild" type="text" /></td>
                 </tr>
             )
 
@@ -27,13 +27,13 @@ export default function Scripts() {
         if (found) {
             const array = [];
 
-            array.push(tr("1", "Ind. Clínica", "formChild"));
-            array.push(tr("2", "Convênio", "formChild"));
-            array.push(tr("3", "Peso", "formChild"));
-            array.push(tr("4", "Preparos", "formChild"));
+            array.push(tr("1", "Ind. Clínica", style.tdLabel, style.tdInput));
+            array.push(tr("2", "Convênio", style.tdLabel, style.tdInput));
+            array.push(tr("3", "Peso", style.tdLabel, style.tdInput));
+            array.push(tr("4", "Preparos", style.tdLabel, style.tdInput));
 
             for (var i = 1; i < found.length; i++){
-                array.push(tr(i*8, found[i], "formChild"))
+                array.push(tr(i*8, found[i], style.tdLabel, style.tdInput))
             }
             setComplementInputs(array);
         }
@@ -57,6 +57,8 @@ export default function Scripts() {
     function copiar() {
         const form = document.querySelector('#form')
         const children = form.querySelectorAll('.formChild')
+        const uraCheckBox = document.querySelector('#uraCheckBox')
+        const amilCheckBox = document.querySelector('#amilCheckBox')
 
         let data = '';
 
@@ -68,13 +70,24 @@ export default function Scripts() {
                     break;
                 case 'INPUT':
                     //@ts-ignore
-                    data += `${children[i].value} //`
+                    data += `${children[i].value} // `
                     break;
                 case 'TEXTAREA':
                     //@ts-ignore
-                    data += `${children[i].value} //`
+                    data += `${children[i].value} // `
             }
         }
+        //@ts-ignore
+        if (amilCheckBox.checked) {
+            data += ` Ciente enviar dados para o email: amilcm@grupopardini.com.br e, caso não receba token até dia do exame, retornar contato.`            
+        }
+        
+        //@ts-ignore
+        if (uraCheckBox.checked) {
+            data += ` Realizado transferência para URA.`
+        }
+
+
         navigator.clipboard.writeText(data);
     }
 
@@ -84,8 +97,8 @@ export default function Scripts() {
                 <table>
                     <thead>
                         <tr>
-                            <td><label className="formChild" >Contato</label></td>
-                            <td><input className="formChild" type="text"/></td>
+                            <td className={style.tdLabel}><label className="formChild">Contato</label></td>
+                            <td className={style.tdInput}><input className="formChild" type="text"/></td>
                         </tr>
                     </thead>
                     <tbody>
@@ -99,7 +112,21 @@ export default function Scripts() {
                 <select onChange={complement}>
                     {options()}                
                 </select>
-                <button onClick={copiar}>Copiar</button>
+                <table className={style.trFunctions}>
+                    <thead >
+                        <tr>
+                            <td className={style.tdUra}>
+                                <label>Ura <input id="uraCheckBox" type="checkbox"/></label>
+                            </td>
+                            <td className={style.tdAmil}>
+                                <label>Amil <input id="amilCheckBox" type="checkbox"/></label>
+                            </td>
+                            <td>
+                                <button onClick={copiar}>Copiar</button>
+                            </td>
+                        </tr>
+                    </thead>
+                </table>
                 <table>
                     <tbody>
                         {complementInputs}

@@ -1,6 +1,7 @@
 
 .area {
     background-color: greenyellow;
+    width: 300px;
 }
 
 .area fieldset {
