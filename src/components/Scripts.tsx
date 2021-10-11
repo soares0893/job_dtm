@@ -6,22 +6,32 @@ const selectOptions = require('../data/selectOptions')
 
 export default function Scripts() {
 
-    const [complementInputs, setComplementInputs] = useState([])
+    const [complementInputs, setComplementInputs] = useState([]);
 
-    function complement(event)
+    function Complement(event)
     {
         const found = selectOptions.find(array => array[0] == event.target.value);
 
-
-
-        function tr(key, value, tdLabelClass, tdInputClass) {
-            return (
-                <tr key={key}>
-                    <td className={tdLabelClass}><label className="formChild">{value}</label></td>
-                    <td className={tdInputClass}><input className="formChild" type="text" /></td>
-                </tr>
-            )
-
+        function tr(key, value, tdLabelClass, tdInputClass, inputValue?) {
+            if (inputValue) {
+                return (
+                    <tr key={key}>
+                        <td className={tdLabelClass}><label className="formChild">{value}</label></td>
+                        <td className={tdInputClass}>
+                            <input
+                                className="formChild"
+                                defaultValue={inputValue} />
+                        </td>
+                    </tr>
+                    )
+            } else {
+                return (
+                    <tr key={key}>
+                        <td className={tdLabelClass}><label className="formChild">{value}</label></td>
+                        <td className={tdInputClass}><input className="formChild" type="text"/></td>
+                    </tr>
+                )
+            }   
         }
 
         if (found) {
@@ -33,7 +43,7 @@ export default function Scripts() {
             array.push(tr("4", "Preparos", style.tdLabel, style.tdInput));
 
             for (var i = 1; i < found.length; i++){
-                array.push(tr(i*8, found[i], style.tdLabel, style.tdInput))
+                array.push(tr(i*8, found[i], style.tdLabel, style.tdInput, 'não'))
             }
             setComplementInputs(array);
         }
@@ -109,7 +119,7 @@ export default function Scripts() {
                         </tr>
                     </tbody>
                 </table>                
-                <select onChange={complement}>
+                <select onChange={Complement}>
                     {options()}                
                 </select>
                 <table className={style.trFunctions}>
