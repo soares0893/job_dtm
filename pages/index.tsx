@@ -4,8 +4,9 @@ import Menu from '../src/components/Menu';
 import Infos from '../src/components/Infos';
 
 export default function Home() {
+
   return (
-    <div style={{display: "flex"}}>
+    <div style={{ display: "flex"}}>
       <Scripts />
       <Queries />
       <div>

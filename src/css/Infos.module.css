@@ -1,0 +1,18 @@
+.area {
+    position: absolute;
+    min-height: 400px;
+    background-color: violet;
+}
+
+.card {
+    display: inline-flex;
+    flex-wrap: wrap;
+    background-color: bisque;
+    text-align: center;
+    justify-content: center;
+    align-items: center; /*AQUIIII*/
+    width: 220px;
+    min-height: 120px;
+    max-height: auto;
+    margin: 20px 0 0 20px;
+}
