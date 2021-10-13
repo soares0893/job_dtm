@@ -28,7 +28,12 @@ export default function Infos() {
                 RETORNO: Sem previsão ❌<br/>
             </span>
             <span className={styles.card}>
-                A
+                Comunicado - 13/10 🚨<br/>
+
+                TIPO: RM - PH ☠️<br/>
+                UNIDADES: BA 🏥 <br/> 
+                INFORMAÇÃO: Inoperante 🚫<br/>
+                RETORNO: Normalizado ✅<br/>
             </span>
             <span className={styles.card}>
                 A
