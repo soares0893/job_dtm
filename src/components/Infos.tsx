@@ -36,7 +36,11 @@ export default function Infos() {
                 RETORNO: Normalizado ✅<br/>
             </span>
             <span className={styles.card}>
-                A
+                Comunicado - 13/10 🚨<br/>
+
+                TIPO: RM GE  ☠️<br/>
+                UNIDADES: CAMPO GRANDE 🏥<br/>
+                INFORMAÇÃO: Inoperante 🚫<br/>
             </span>
             <span className={styles.card}>
                 A
