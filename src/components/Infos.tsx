@@ -30,14 +30,6 @@ export default function Infos() {
             <span className={styles.card}>
                 Comunicado - 13/10 🚨<br/>
 
-                TIPO: RM - PH ☠️<br/>
-                UNIDADES: BA 🏥 <br/> 
-                INFORMAÇÃO: Inoperante 🚫<br/>
-                RETORNO: Normalizado ✅<br/>
-            </span>
-            <span className={styles.card}>
-                Comunicado - 13/10 🚨<br/>
-
                 TIPO: RM GE  ☠️<br/>
                 UNIDADES: CAMPO GRANDE 🏥<br/>
                 INFORMAÇÃO: Inoperante 🚫<br/>
