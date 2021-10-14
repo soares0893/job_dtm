@@ -1,8 +1,18 @@
 import styles from '../css/Infos.module.css'
 export default function Infos() {
+
+    function selected() {
+        alert('Deseja remover ou editar?');
+    }
+
+    function addInfo() {
+        alert('Adicionar informação');
+    }
+
     return (
         <div className={styles.area}>
             <div className={styles.card}>
+                <button onClick={selected} className={styles.btn}>X</button>
                 🚨 Comunicado - 11/10 🚨<br/>
 
                 TIPO: RM Coluna☠️<br/>
@@ -12,6 +22,8 @@ export default function Infos() {
 
             </div>
             <span className={styles.card}>
+                <button onClick={selected} className={styles.btn}>X</button>
+
                 🚨Comunicado - 11/10 🚨<br/>
 
                 TIPO: RM ☠️<br/>
@@ -20,6 +32,8 @@ export default function Infos() {
                 RETORNO: Sem previsão ❌<br/>
             </span>
             <span className={styles.card}>
+                <button onClick={selected} className={styles.btn}>X</button>
+
                 Comunicado - 11/10 🚨<br/>
 
                 TIPO: RM - PH ☠️<br/>
@@ -28,6 +42,8 @@ export default function Infos() {
                 RETORNO: Sem previsão ❌<br/>
             </span>
             <span className={styles.card}>
+                <button onClick={selected} className={styles.btn}>X</button>
+
                 Comunicado - 13/10 🚨<br/>
 
                 TIPO: RM GE  ☠️<br/>
@@ -35,14 +51,19 @@ export default function Infos() {
                 SITUAÇÃO: Inoperante 🚫<br/>
             </span>
             <span className={styles.card}>
+                <button onClick={selected} className={styles.btn}>X</button>
+
                 Comunicado<br/>
                 TIPO:<br/>
                 UNIDADES:<br />
                 Retorno:<br/>
             </span>
             <span className={styles.card}>
+                <button onClick={selected} className={styles.btn}>X</button>
+
                 A
             </span>
+            <button onClick={addInfo} className={styles.add}>+</button>
         </div>
     )
 }
