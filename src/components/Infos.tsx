@@ -31,8 +31,14 @@ export default function Infos() {
                 Comunicado - 13/10 🚨<br/>
 
                 TIPO: RM GE  ☠️<br/>
-                UNIDADES: CAMPO GRANDE 🏥<br/>
-                INFORMAÇÃO: Inoperante 🚫<br/>
+                UNIDADES: CG 🏥<br/>
+                SITUAÇÃO: Inoperante 🚫<br/>
+            </span>
+            <span className={styles.card}>
+                Comunicado<br/>
+                TIPO:<br/>
+                UNIDADES:<br />
+                Retorno:<br/>
             </span>
             <span className={styles.card}>
                 A
