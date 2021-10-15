@@ -24,16 +24,6 @@ export default function Infos() {
             <span className={styles.card}>
                 <button onClick={selected} className={styles.btn}>X</button>
 
-                🚨Comunicado - 11/10 🚨<br/>
-
-                TIPO: RM ☠️<br/>
-                UNIDADES: Jpa 🏥<br/>
-                INFORMAÇÃO: Inoperante 🚫<br/>
-                RETORNO: Sem previsão ❌<br/>
-            </span>
-            <span className={styles.card}>
-                <button onClick={selected} className={styles.btn}>X</button>
-
                 Comunicado - 11/10 🚨<br/>
 
                 TIPO: RM - PH ☠️<br/>
@@ -57,6 +47,41 @@ export default function Infos() {
                 TIPO:<br/>
                 UNIDADES:<br />
                 Retorno:<br/>
+            </span>
+            <span className={styles.card}>
+                <button onClick={selected} className={styles.btn}>X</button>
+
+                A
+            </span>
+            <span className={styles.card}>
+                <button onClick={selected} className={styles.btn}>X</button>
+
+                A
+            </span>
+            <span className={styles.card}>
+                <button onClick={selected} className={styles.btn}>X</button>
+
+                A
+            </span>
+            <span className={styles.card}>
+                <button onClick={selected} className={styles.btn}>X</button>
+
+                A
+            </span>
+            <span className={styles.card}>
+                <button onClick={selected} className={styles.btn}>X</button>
+
+                A
+            </span>
+            <span className={styles.card}>
+                <button onClick={selected} className={styles.btn}>X</button>
+
+                A
+            </span>
+            <span className={styles.card}>
+                <button onClick={selected} className={styles.btn}>X</button>
+
+                A
             </span>
             <span className={styles.card}>
                 <button onClick={selected} className={styles.btn}>X</button>
