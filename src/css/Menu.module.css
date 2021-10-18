@@ -12,9 +12,10 @@
     padding: 10px;
     margin: 5px;
     border-radius: 5px;
-    cursor: pointer
+    cursor: pointer;
+    transition: all .2s ease-in-out;
 }
 
 .btn:hover {
-    background-color: cyan;
+    transform: scale(1.1);
 }
