@@ -25,7 +25,7 @@ export default function Information(props) {
     )
 
     async function queryRemove(array) {
-        await axios.delete('http://localhost:3000/api/arrayInfos',
+        await axios.delete('/api/arrayInfos',
             {
                 data: array 
             }).then(

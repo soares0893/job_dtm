@@ -12,7 +12,7 @@ export default function AddInfo(props: AddInfoType) {
     let [close, setClose] = useState(false)
 
     async function postDB(obj) {
-        await axios.post('http://localhost:3000/api/arrayInfos', obj).then(
+        await axios.post('/api/arrayInfos', obj).then(
             () => setClose(true)
         )
     }
