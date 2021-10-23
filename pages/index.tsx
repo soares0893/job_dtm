@@ -6,9 +6,13 @@ import Infos from '../src/components/Infos';
 import axios from 'axios'
 
 export async function getStaticProps() {
-  const response = await axios.get('http://localhost:3000/api/arrayInfos')
-  const data = response.data
-  return { props: {array: data}}
+  try {
+    const response = await axios.get('http://localhost:3000/api/arrayInfos')
+    const data = response.data
+    return { props: {array: data}}    
+  } finally {
+    return { props: {array: []}} 
+  }
 }
 
 export default function Home(props) {
