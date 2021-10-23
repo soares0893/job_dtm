@@ -19,7 +19,7 @@ export default function Home(props) {
       <Queries />
       <div>
         <Menu />
-        <Infos value={props.array}/>
+        {props.array ? <Infos value={props.array}/> : ''}
       </div>
     </div>
   )
