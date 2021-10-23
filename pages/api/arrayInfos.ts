@@ -4,13 +4,16 @@ import Infos from '../../src/models/Infos';
 export default function handler(req, res) {
 
     const array = []
-
     for (let i = 0; i < infocards.length; i++){
         array.push(infocards[i].toObject())
     }
     
     if (req.method === 'GET') {
         res.status(200).json(array)
+    }
+
+    if (req.method === 'POST') {
+        res.status(200).json('post')
     }
 
     if (req.method === 'DELETE') {

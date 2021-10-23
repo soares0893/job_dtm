@@ -1,5 +1,7 @@
 .area {
     display: grid;
+    height: 85%;
+    background-color: darkgoldenrod;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
@@ -14,7 +16,7 @@
     /* align-items: center; */ /*AQUIIII*/
     width: 220px;
     min-height: 120px;
-    max-height: auto;
+    max-height: 200px;
     margin: 20px 0 0 20px;
 }
 
@@ -41,9 +43,9 @@
     border-radius: 50%;
     align-items: center;
     justify-content: center;
-    float: right;
+    /* float: right;
     margin-left: 680px;
-    margin-top: 500px;
+    margin-top: 500px; */
     cursor: pointer;
     border: none;
 }

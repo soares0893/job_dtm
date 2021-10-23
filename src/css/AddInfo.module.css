@@ -1,0 +1,7 @@
+.default {
+    position: relative;
+    background-color: chocolate;
+    width: 300px;
+    height: 200px;
+    margin: 50%;
+}

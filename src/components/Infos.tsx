@@ -2,6 +2,7 @@ import styles from '../css/Infos.module.css'
 import axios from 'axios'
 import Infos from "../models/Infos";
 import { useState } from 'react';
+import AddInfo from './AddInfo';
 
 export async function getServerSideProps() {
     console.log('estou aqui')
@@ -42,14 +43,17 @@ export default function Information(props) {
                 queryRemove(array[i])
             }
         }
-    } 
+    }
+    let [add, setAdd] = useState(false)
     
     function addInfo() {
-        alert('Adicionar informação');
+        setAdd(true)
+        console.log('Add a new information')
     }
 
     return (
         <div className={styles.area}>
+            {add ? <AddInfo value={true} close={() => setAdd(false)}/> : false}
             {data.map(obj => (
             <div key={obj.id} className={styles.card}>
                     <button value={obj.id} onClick={remove} className={styles.btn}>X</button>
