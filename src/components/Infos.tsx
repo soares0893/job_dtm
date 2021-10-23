@@ -1,93 +1,64 @@
 import styles from '../css/Infos.module.css'
-export default function Infos() {
+import axios from 'axios'
+import Infos from "../models/Infos";
+import { useState } from 'react';
 
-    function selected() {
-        alert('Deseja remover ou editar?');
+export async function getServerSideProps() {
+    console.log('estou aqui')
+
+}
+export default function Information(props) {
+
+    const [data, setData] = useState(props.value)
+    
+    const card = (
+        data.map(obj => (
+            <div key={Math.random()} className={styles.card}>
+                    <button value={obj.id} onClick={remove} className={styles.btn}>X</button>
+                    {obj.date}<br/>
+                    {obj.type}<br/>
+                    {obj.units}<br/>
+                    {obj.forecast}<br/>
+                </div>
+            ))
+    )
+
+    async function queryRemove(array) {
+        await axios.delete('http://localhost:3000/api/arrayInfos',
+            {
+                data: array 
+            }).then(
+                response => {
+                    setData(response.data)
+            }
+        )                    
     }
 
+    function remove(e) {
+        const array = props.value
+        for (let i = 0; i < array.length; i++){
+            if (array[i].id == e.target.value) {
+                //colocar alert(sim ou não para confirmar exclusão)
+                queryRemove(array[i])
+            }
+        }
+    } 
+    
     function addInfo() {
         alert('Adicionar informação');
     }
 
     return (
         <div className={styles.area}>
-            <div className={styles.card}>
-                <button onClick={selected} className={styles.btn}>X</button>
-                🚨 Comunicado - 11/10 🚨<br/>
-
-                TIPO: RM Coluna☠️<br/>
-                UNIDADES: Miguel Couto 🏥<br/>
-                INFORMAÇÃO: Inoperante<br />
-                PREVISÃO: Não
-
-            </div>
-            <span className={styles.card}>
-                <button onClick={selected} className={styles.btn}>X</button>
-
-                Comunicado - 11/10 🚨<br/>
-
-                TIPO: RM - PH ☠️<br/>
-                UNIDADES: Buenos Aires🏥<br/>
-                INFORMAÇÃO: Inoperante 🚫<br/>
-                RETORNO: Sem previsão ❌<br/>
-            </span>
-            <span className={styles.card}>
-                <button onClick={selected} className={styles.btn}>X</button>
-
-                Comunicado - 13/10 🚨<br/>
-
-                TIPO: RM GE  ☠️<br/>
-                UNIDADES: CG 🏥<br/>
-                SITUAÇÃO: Inoperante 🚫<br/>
-            </span>
-            <span className={styles.card}>
-                <button onClick={selected} className={styles.btn}>X</button>
-
-                Comunicado<br/>
-                TIPO:<br/>
-                UNIDADES:<br />
-                Retorno:<br/>
-            </span>
-            <span className={styles.card}>
-                <button onClick={selected} className={styles.btn}>X</button>
-
-                A
-            </span>
-            <span className={styles.card}>
-                <button onClick={selected} className={styles.btn}>X</button>
-
-                A
-            </span>
-            <span className={styles.card}>
-                <button onClick={selected} className={styles.btn}>X</button>
-
-                A
-            </span>
-            <span className={styles.card}>
-                <button onClick={selected} className={styles.btn}>X</button>
-
-                A
-            </span>
-            <span className={styles.card}>
-                <button onClick={selected} className={styles.btn}>X</button>
-
-                A
-            </span>
-            <span className={styles.card}>
-                <button onClick={selected} className={styles.btn}>X</button>
-
-                A
-            </span>
-            <span className={styles.card}>
-                <button onClick={selected} className={styles.btn}>X</button>
-
-                A
-            </span>
-            <span className={styles.card}>
-                <button onClick={selected} className={styles.btn}>X</button>
-
-                A
-            </span>
+            {data.map(obj => (
+            <div key={obj.id} className={styles.card}>
+                    <button value={obj.id} onClick={remove} className={styles.btn}>X</button>
+                    {obj.date}<br/>
+                    {obj.type}<br/>
+                    {obj.units}<br/>
+                    {obj.forecast}<br/>
+                </div>
+            ))}
             <button onClick={addInfo} className={styles.add}>+</button>
         </div>
     )
