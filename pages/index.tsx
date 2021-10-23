@@ -10,7 +10,7 @@ export async function getStaticProps() {
     const response = await axios.get('http://localhost:3000/api/arrayInfos')
     const data = response.data
     return { props: {array: data}}    
-  } finally {
+  } catch {
     return { props: {array: []}} 
   }
 }
