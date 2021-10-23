@@ -37,6 +37,8 @@ export default function AddInfo(props: AddInfoType) {
             <h3>Add new information</h3>
             <h2>{props.value}</h2>
             <table>
+                <thead></thead>
+                <tbody>
                 <tr>
                     <td>Data</td><td><input id="data" type="text"/></td>
                 </tr>
@@ -52,6 +54,8 @@ export default function AddInfo(props: AddInfoType) {
                 <tr>
                     <td><button onClick={addIndoOnDatabase}>Adicionar</button></td><td><button onClick={props.close}>Cancelar</button></td>
                 </tr>
+                </tbody>
+                <tfoot></tfoot>
             </table>
         </div>
     )

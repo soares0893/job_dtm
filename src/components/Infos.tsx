@@ -15,7 +15,7 @@ export default function Information(props) {
     const card = (
         data.map(obj => (
             <div key={Math.random()} className={styles.card}>
-                    <button value={obj.id} onClick={remove} className={styles.btn}>X</button>
+                    <button value={Math.random()} onClick={remove} className={styles.btn}>X</button>
                     {obj.date}<br/>
                     {obj.type}<br/>
                     {obj.units}<br/>

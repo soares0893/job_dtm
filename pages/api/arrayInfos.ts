@@ -1,7 +1,10 @@
 import infocards from '../../src/data/arrayInfos';
 import Infos from '../../src/models/Infos';
 
-export default function handler(req, res) {
+import connect from '../../src/utils/connection';
+
+export default async function handler(req, res) {
+    const { db } = await connect();
 
     const array = []
     for (let i = 0; i < infocards.length; i++){
@@ -9,11 +12,18 @@ export default function handler(req, res) {
     }
     
     if (req.method === 'GET') {
-        res.status(200).json(array)
-    }
-
+        const getData = await db.collection('infos').find().toArray()
+        res.status(200).json(getData)
+    }    
+    
     if (req.method === 'POST') {
-        res.status(200).json('post')
+        const { data, type, units, forecast } = req.body
+        if (!data && !type && !units && !forecast) { res.status(200).json('Missing data') }
+        
+        const sendData = await db.collection('infos').insertOne({
+            data, type, units, forecast
+        })
+        res.status(200).json(sendData)
     }
 
     if (req.method === 'DELETE') {
