@@ -11,7 +11,7 @@
     display: flex; /*???*/
     flex-wrap: wrap;
     background-color: bisque;
-    /* text-align: center; */
+    /* /* /* /* /* text-align: center; */
     /* justify-content: center; */
     /* align-items: center; */ /*AQUIIII*/
     width: 220px;
@@ -43,9 +43,9 @@
     border-radius: 50%;
     align-items: center;
     justify-content: center;
-    /* float: right;
+    float: right;
     margin-left: 680px;
-    margin-top: 500px; */
+    margin-top: 500px;
     cursor: pointer;
     border: none;
 }

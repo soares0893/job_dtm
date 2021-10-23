@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { useState } from 'react';
 import styles from '../css/AddInfo.module.css';
 
 interface AddInfoType {
@@ -8,10 +9,11 @@ interface AddInfoType {
 
 export default function AddInfo(props: AddInfoType) {
 
-    //const { value } = props.value
+    let [close, setClose] = useState(false)
+
     async function postDB(obj) {
         await axios.post('http://localhost:3000/api/arrayInfos', obj).then(
-            response => console.log(response)
+            () => setClose(true)
         )
     }
 
@@ -28,6 +30,7 @@ export default function AddInfo(props: AddInfoType) {
         if (data != '' && type != '' && units != '' && forecast != '') {
             const obj = { data, type, units, forecast }
             postDB(obj)
+            props.close()
         }
 
     }
