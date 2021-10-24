@@ -12,7 +12,7 @@ export default function AddInfo(props: AddInfoType) {
 
     async function getDataDb() {
         await axios.get('http://localhost:3000/api/arrayInfos').then(
-            resp => { console.log(resp) }
+            resp => { props.add() }
         )
     }
     async function postDB(obj) {
@@ -34,7 +34,6 @@ export default function AddInfo(props: AddInfoType) {
         if (data != '' || type != '' || units != '' || forecast != '') {
             const obj = { data, type, units, forecast }
             postDB(obj)
-            props.add()
             props.close()
         }
     }

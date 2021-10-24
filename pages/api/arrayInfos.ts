@@ -14,8 +14,8 @@ export default async function handler(req, res) {
     });
     
     if (req.method === 'GET') {
-        const getData = await db.collection('infos').find().toArray()
-        res.status(200).json(getData)
+      const getData = await db.collection('infos').find().toArray()
+      return res.status(200).json(getData)
     }    
     
     if (req.method === 'POST') {
@@ -24,7 +24,7 @@ export default async function handler(req, res) {
         const sendData = await db.collection('infos').insertOne({
             data, type, units, forecast
         })
-        res.status(200).json(sendData)
+        return res.status(200).json(sendData)
     }
 
     res.status(404).json('Not allowed')

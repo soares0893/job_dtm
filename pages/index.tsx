@@ -7,7 +7,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react';
 
 export async function getServerSideProps() {
-  const response = await axios.get('http://localhost:3000/api/arrayInfos')
+  const response = await axios.get('http://localhost:3000/api/arrayInfos', {headers: {'1': '2'}})
   return { props: {array: response.data}} 
 }
 
@@ -21,7 +21,7 @@ export default function Home(props) {
       <Queries />
       <div>
         <Menu />
-        {props.array ? <Infos value={props.array}/> : ''}
+        {props.array ? <Infos value={[]}/> : <Infos value={[]}/>}
       </div>
     </div>
   )
