@@ -11,12 +11,12 @@ interface AddInfoType {
 export default function AddInfo(props: AddInfoType) {
 
     async function getDataDb() {
-        await axios.get('https://my-bassist-chris.mybassistchris.now.sh/api/arrayInfos').then(
+        await axios.get('http://localhost:3000/api/arrayInfos').then(
             resp => { console.log(resp) }
         )
     }
     async function postDB(obj) {
-        await axios.post('https://my-bassist-chris.mybassistchris.now.sh/api/arrayInfos', obj).then(() => getDataDb())
+        await axios.post('http://localhost:3000/api/arrayInfos', obj).then(() => getDataDb())
     }
 
     useEffect(() => console.log('useEffetc on AddInfo'))

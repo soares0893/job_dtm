@@ -5,12 +5,9 @@ import Infos from '../src/components/Infos';
 
 import axios from 'axios'
 import { useEffect, useState } from 'react';
-import InfosModel from '../src/models/Infos';
-
-import styles from '../src/css/Infos.module.css'
 
 export async function getStaticProps() {
-  const response = await axios.get('https://my-bassist-chris.mybassistchris.now.sh/api/arrayInfos')
+  const response = await axios.get('http://localhost:3000/api/arrayInfos')
   return { props: {array: response.data}} 
 }
 
