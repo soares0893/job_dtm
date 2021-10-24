@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from '../css/AddInfo.module.css';
 
 interface AddInfoType {
@@ -10,16 +10,18 @@ interface AddInfoType {
 
 export default function AddInfo(props: AddInfoType) {
 
-    let [close, setClose] = useState(false)
-
-    async function postDB(obj) {
-        await axios.post('/api/arrayInfos', obj).then(
-            () => setClose(true)
+    async function getDataDb() {
+        await axios.get('http://localhost:3000/api/arrayInfos').then(
+            resp => { console.log(resp) }
         )
     }
+    async function postDB(obj) {
+        await axios.post('http://localhost:3000/api/arrayInfos', obj).then(() => getDataDb())
+    }
+
+    useEffect(() => console.log('useEffetc on AddInfo'))
 
     function addIndoOnDatabase() {
-        props.add()
         //@ts-ignore
         const data = document.querySelector("#data").value
         //@ts-ignore
@@ -29,18 +31,17 @@ export default function AddInfo(props: AddInfoType) {
         //@ts-ignore
         const forecast = document.querySelector("#forecast").value
 
-        if (data != '' && type != '' && units != '' && forecast != '') {
+        if (data != '' || type != '' || units != '' || forecast != '') {
             const obj = { data, type, units, forecast }
             postDB(obj)
+            props.add()
             props.close()
         }
-
     }
 
     return (
         <div className={styles.default}>
             <h3>Add new information</h3>
-            <h2>{props.value}</h2>
             <table>
                 <thead></thead>
                 <tbody>

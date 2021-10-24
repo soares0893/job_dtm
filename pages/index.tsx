@@ -5,21 +5,18 @@ import Infos from '../src/components/Infos';
 
 import axios from 'axios'
 import { useEffect, useState } from 'react';
+import InfosModel from '../src/models/Infos';
+
+import styles from '../src/css/Infos.module.css'
 
 export async function getStaticProps() {
-  const response = await fetch('/api/arrayInfos')
-  const data = response
-    return { props: {array: data}} 
+  const response = await axios.get('http://localhost:3000/api/arrayInfos')
+  return { props: {array: response.data}} 
 }
 
 export default function Home(props) {
-  const [data, setData] = useState(props.array)
 
-  console.log(data)
-
-  useEffect(() => {
-    console.log('useEffect')
-  })
+  useEffect(() => {})
 
   return (
     <div style={{ display: "flex"}}>
@@ -27,7 +24,7 @@ export default function Home(props) {
       <Queries />
       <div>
         <Menu />
-        {data ? <Infos value={data}/> : ''}
+        {props.array ? <Infos value={props.array}/> : ''}
       </div>
     </div>
   )

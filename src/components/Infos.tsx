@@ -4,40 +4,57 @@ import Infos from "../models/Infos";
 import { useEffect, useState } from 'react';
 import AddInfo from './AddInfo';
 
-export async function getServerSideProps() {
-    console.log('estou aqui')
-
-}
 export default function Information(props) {
 
-    let [data, setData] = useState(props.value)
+    let [arrayToRender, setRenderedArray] = useState([])
+
     let [add, setAdd] = useState(false)
+    let [executedFunction, setExec] = useState(false)
+
+    let arrayFromGetStaticProps = (props.value.map((r: Infos) => 
+            <div key={Math.random()} className={styles.card}>
+                {r.date} <br />
+                {r.type} <br />
+                {r.units} <br />
+                {r.forecast} <br />
+            </div>
+        ))
+    
+
+    function mapRenderededData(data) {
+        const newArrayRendered = [];
+        data.map((r: Infos) => newArrayRendered.push(
+            <div key={Math.random()} className={styles.card}>
+                {r.date} <br />
+                {r.type} <br />
+                {r.units} <br />
+                {r.forecast} <br />
+            </div>
+        ));
+        setExec(true)
+        setRenderedArray(newArrayRendered);
+    }
 
     async function getData() {
-        console.log('getData')
-        const response = await fetch('/api/arrayInfos').then(
-            resp => setData(resp)
+        const response = await axios.get<Infos[]>('http://localhost:3000/api/arrayInfos').then(
+            resp => {
+                const dataFromDb = resp.data
+                mapRenderededData(dataFromDb)
+            }
         )
-        //setData(response.data)
     }
+
     
-    function addInfo() {
+    function buttonAddInfo() {
         setAdd(true)
+        getData()
     }
 
     return (
         <div className={styles.area}>
             {add ? <AddInfo value={true} add={() => getData()} close={() => setAdd(false)}/> : false}
-            {data.map(obj => (
-            <div key={Math.random()} className={styles.card}>
-                    <button value={obj.id} onClick={() => console.log('remover')} className={styles.btn}>X</button>
-                    {obj.date}<br/>
-                    {obj.type}<br/>
-                    {obj.units}<br/>
-                    {obj.forecast}<br/>
-                </div>
-            ))}
-            <button onClick={addInfo} className={styles.add}>+</button>
+            {executedFunction ? arrayToRender : arrayFromGetStaticProps}
+            <button onClick={buttonAddInfo} className={styles.add}>+</button>
         </div>
     )
 }
