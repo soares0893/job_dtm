@@ -4,6 +4,7 @@ import styles from '../css/AddInfo.module.css';
 
 interface AddInfoType {
     value: boolean
+    add: () => void
     close: () => void
 }
 
@@ -18,6 +19,7 @@ export default function AddInfo(props: AddInfoType) {
     }
 
     function addIndoOnDatabase() {
+        props.add()
         //@ts-ignore
         const data = document.querySelector("#data").value
         //@ts-ignore
