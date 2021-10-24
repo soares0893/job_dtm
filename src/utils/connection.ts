@@ -5,8 +5,8 @@ interface ConnectType {
     client: MongoClient
 }
 
-const client = new MongoClient(process.env.DATABASE_URL)
-//const client = new MongoClient('mongodb+srv://job_dtm:123@cluster0.iyx5r.mongodb.net/test')
+//const client = new MongoClient(process.env.DATABASE_URL)
+const client = new MongoClient('mongodb+srv://job_dtm:123@cluster0.iyx5r.mongodb.net/test')
 
 export default async function Connect() {
     await client.connect();
