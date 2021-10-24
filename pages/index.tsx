@@ -7,13 +7,15 @@ import axios from 'axios'
 import { useEffect, useState } from 'react';
 
 export async function getStaticProps() {
-  const response = await axios.get('http://localhost:3000/api/arrayInfos')
-    const data = response.data
+  const response = await fetch('/api/arrayInfos')
+  const data = response
     return { props: {array: data}} 
 }
 
 export default function Home(props) {
   const [data, setData] = useState(props.array)
+
+  console.log(data)
 
   useEffect(() => {
     console.log('useEffect')

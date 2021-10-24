@@ -15,8 +15,8 @@ export default function Information(props) {
 
     async function getData() {
         console.log('getData')
-        const response = await axios.get('http://localhost:3000/api/arrayInfos').then(
-            resp => setData(resp.data)
+        const response = await fetch('/api/arrayInfos').then(
+            resp => setData(resp)
         )
         //setData(response.data)
     }
