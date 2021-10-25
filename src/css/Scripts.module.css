@@ -1,48 +1,48 @@
 
 .form {
-    background-color: orange;
-    margin-right: 5px;
     display: flex;
-    width: 300px;
-    min-width: 300px;
-    height: 100vh;
+    margin-right: 5px;
+    min-width: 21vw;
+    min-height: 100vh;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
 }
 
 .form fieldset {
-    background-color: tomato;
-    width: 95%;
+    background-color: rgb(28, 57, 55);
+    border-color: rgb(24, 41, 41);
+    color: white;
+    width: 100%;   
     padding: 0;
     border-radius: 8px;
-    margin: auto;
-    height: 100vh;
 }
 
 .form textarea {
-    max-width: 270px; /*CORRIGIR*/
-    min-width: 270px; /*CORRIGIR*/
+    background-color: rgb(156, 196, 193);
+    max-width: 250px; /*CORRIGIR*/
+    min-width: 250px; /*CORRIGIR*/
     height: 60px;
     margin: 0 5px;
 }
 
 .form select {
-    width: 270px;
     text-align: center;
     margin: 0 2.5%;
 }
 
 .tdLabel {
-    background-color: greenyellow;
-    width: 100px;
+    /* background-color: greenyellow; */
 }
 .tdLabel label {
-    background-color: turquoise;
+    /* background-color: turquoise; */
 }
 
 .tdInput {
-    background-color: yellow;
+    /* background-color: yellow; */
 }
 .tdInput input {
-    background-color: violet;
+    /* background-color: violet; */
+    background-color: rgb(156, 196, 193);
     border-radius: 5px;
     border: none;
     height: 21px;

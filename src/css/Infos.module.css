@@ -1,7 +1,7 @@
 .area {
     display: grid;
-    height: 85%;
-    background-color: darkgoldenrod;
+    min-width: 56vw;  
+    min-height: 92vh;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
@@ -10,7 +10,9 @@
 .card {
     display: flex; /*???*/
     flex-wrap: wrap;
-    background-color: bisque;
+    background-color: rgb(116, 28, 4);
+    color: white;
+    border-radius: 5px;
     /* /* /* /* /* text-align: center; */
     /* justify-content: center; */
     /* align-items: center; */ /*AQUIIII*/
@@ -26,7 +28,6 @@
     color: whitesmoke;
     border: none;
     border-radius: 3px;
-
     margin-top: 3px;
     margin-left: 196px;
     cursor: pointer;

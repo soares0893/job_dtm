@@ -21,7 +21,7 @@ export default function Home(props) {
       <Queries />
       <div>
         <Menu />
-        {props.array ? <Infos value={[]}/> : <Infos value={[]}/>}
+        {props.array ? <Infos value={props.array}/> : <Infos value={[]}/>}
       </div>
     </div>
   )

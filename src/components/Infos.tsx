@@ -13,7 +13,7 @@ export default function Information(props) {
 
     let arrayFromGetStaticProps = (props.value.map((r: Infos) => 
             <div key={Math.random()} className={styles.card}>
-                {r.date} <br />
+                <h2>{r.date}</h2>
                 {r.type} <br />
                 {r.units} <br />
                 {r.forecast} <br />
@@ -23,9 +23,9 @@ export default function Information(props) {
 
     function mapRenderededData(data) {
         const newArrayRendered = [];
-        data.map((r: Infos) => newArrayRendered.push(
+        data.map((r) => newArrayRendered.push(
             <div key={Math.random()} className={styles.card}>
-                {r.date} <br />
+                <h4>{r.date}</h4> <br />
                 {r.type} <br />
                 {r.units} <br />
                 {r.forecast} <br />

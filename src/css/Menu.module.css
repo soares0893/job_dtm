@@ -1,13 +1,13 @@
 .menu {
     display: flex;
-    min-width: 55vw;
-    justify-content: center;
-    background-color: yellow;    
+    justify-content: center; 
+    width: 56vw;  
+    height: 8vh;
 }
 
 .btn {
     min-width: max-content;
-    background-image: linear-gradient(to top, rgb(110, 185, 110), rgb(178, 224, 178));
+    background-image: linear-gradient(to top, #A34828, #d48c71);
     color: whitesmoke;
     padding: 10px;
     margin: 5px;
