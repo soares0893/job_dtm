@@ -3,6 +3,7 @@
     display: flex;
     margin-right: 5px;
     min-width: 21vw;
+    max-width: 21vw;
     min-height: 100vh;
     margin-left: 0.5vw;
     margin-right: 0.5vw;
@@ -19,19 +20,20 @@
 
 .form textarea {
     background-color: rgb(156, 196, 193);
-    max-width: 250px; /*CORRIGIR*/
-    min-width: 250px; /*CORRIGIR*/
+    max-width: 270px; /*CORRIGIR*/
+    min-width: 270px; /*CORRIGIR*/
     height: 60px;
-    margin: 0 5px;
 }
 
 .form select {
+    width: 270px;
     text-align: center;
-    margin: 0 2.5%;
+    margin: 0 3px;
 }
 
 .tdLabel {
-    /* background-color: greenyellow; */
+    text-align: center;
+    width: 35%;
 }
 .tdLabel label {
     /* background-color: turquoise; */
@@ -53,16 +55,15 @@
     border-spacing: 28px 5px;
 }
 
-.tdUra {
-    background-color: whitesmoke;
-    border: 1px solid black;
+.checkbox {
+    border: 1px solid cadetblue;
     border-radius: 5px;
-
+    padding: 0 2px;
 }
-.tdAmil {
-    background-color: cadetblue;
-    border: 1px solid black;
-    border-radius: 5px;
+.checkbox input {
+    margin: 0;
+}
+.checkbox label {
 }
 
 

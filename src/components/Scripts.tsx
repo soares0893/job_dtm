@@ -125,11 +125,11 @@ export default function Scripts() {
                 <table className={style.trFunctions}>
                     <thead >
                         <tr>
-                            <td className={style.tdUra}>
-                                <label>Ura <input id="uraCheckBox" type="checkbox"/></label>
+                            <td >
+                                <span className={style.checkbox}><label>Ura</label> <input id="uraCheckBox" type="checkbox"/></span>
                             </td>
-                            <td className={style.tdAmil}>
-                                <label>Amil <input id="amilCheckBox" type="checkbox"/></label>
+                            <td>
+                                <span className={style.checkbox}><label>Amil</label> <input id="amilCheckBox" type="checkbox"/></span>
                             </td>
                             <td>
                                 <button onClick={copiar}>Copiar</button>

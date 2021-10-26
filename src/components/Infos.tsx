@@ -13,7 +13,7 @@ export default function Information(props) {
 
     let arrayFromGetStaticProps = (props.value.map((r: Infos) => 
             <div key={Math.random()} className={styles.card}>
-                <h2>{r.date}</h2>
+                <h4>{r.date}</h4>
                 {r.type} <br />
                 {r.units} <br />
                 {r.forecast} <br />
