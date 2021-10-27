@@ -36,7 +36,7 @@ export default function Information(props) {
     }
 
     async function getData() {
-        const response = await axios.get<Infos[]>('http://localhost:3000/api/arrayInfos').then(
+        const response = await axios.get<Infos[]>('https://job-dtm.vercel.app/api/arrayInfos').then(
             resp => {
                 const dataFromDb = resp.data
                 mapRenderededData(dataFromDb)
