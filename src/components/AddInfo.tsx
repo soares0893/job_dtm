@@ -12,12 +12,12 @@ interface AddInfoType {
 export default function AddInfo(props: AddInfoType) {
 
     async function getDataDb() {
-        await axios.get('http://localhost:3000/api/arrayInfos').then(
+        await axios.get('https://job-dtm.vercel.app/api/arrayInfos').then(
             resp => { props.add() }
         )
     }
     async function postDB(obj) {
-        await axios.post<Infos[]>('http://localhost:3000/api/arrayInfos', obj).then(() => getDataDb())
+        await axios.post<Infos[]>('https://job-dtm.vercel.app/api/arrayInfos', obj).then(() => getDataDb())
     }
 
     useEffect(() => console.log('useEffetc on AddInfo'))

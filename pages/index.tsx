@@ -6,10 +6,10 @@ import Infos from '../src/components/Infos';
 import axios from 'axios'
 import { useEffect, useState } from 'react';
 
-/* export async function getServerSideProps() {
-  const response = await axios.get('http://localhost:3000/api/arrayInfos')
+export async function getServerSideProps() {
+  const response = await axios.get('https://job-dtm.vercel.app/api/arrayInfos')
   return { props: {array: response.data}} 
-} */
+}
 
 export default function Home(props) {
 
