@@ -37,9 +37,9 @@ export default function AddButton(props: AddButtonType) {
                 response => {
                     console.log(response)
                 }
-            )
+                )
         }
-
+        props.onClick(false)
     }
     async function cancel() {        
         if (props.value == 'units') {
@@ -55,8 +55,7 @@ export default function AddButton(props: AddButtonType) {
                     console.log(response)
                 }
             )            
-        }
-        
+        }        
         props.onClick(false)
     }
 
