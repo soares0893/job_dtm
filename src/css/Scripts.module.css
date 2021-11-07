@@ -1,10 +1,11 @@
 
 .form {
+    background-color: pink;
     display: flex;
     margin-right: 5px;
-    min-width: 21vw;
-    max-width: 21vw;
-    min-height: 100vh;
+    min-width: 290px;
+    max-width: 290px;
+    min-height: 95vh;
     margin-left: 0.5vw;
     margin-right: 0.5vw;
 }

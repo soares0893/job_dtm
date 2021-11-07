@@ -1,6 +1,8 @@
 
 .area {
-    width: 21.5vw;
+    background-color: chartreuse;
+    min-width: 290px;
+    max-width: 290px;
     height: 100vh;
     margin-right: 0.5vw;
     

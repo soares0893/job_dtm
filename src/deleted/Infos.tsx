@@ -1,10 +1,13 @@
-import styles from '../css/Infos.module.css'
+import styles from '../../css/Infos.module.css'
 import axios from 'axios'
 import Infos from "../models/Infos";
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import AddInfo from './AddInfo';
 
-export default function Information(props) {
+interface InformationType {
+    value?: []
+}
+export default function Information(props: InformationType) {
 
     let [arrayToRender, setRenderedArray] = useState([])
 

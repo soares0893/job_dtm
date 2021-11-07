@@ -3,7 +3,7 @@ import NextCors from 'nextjs-cors';
 
 export default async function handler(req, res) {
     const { db } = await connect();
-    const { date, type, units, forecast } = req.body
+    const { data, title, subtitle, subject, width } = req.body
 
     await NextCors(req, res, {
       // Options
@@ -14,15 +14,15 @@ export default async function handler(req, res) {
     });
     
     if (req.method === 'GET') {
-      const getData = await db.collection('infos').find().toArray()
+      const getData = await db.collection('forUnits').find().toArray()
       return res.status(200).json(getData)
     }    
     
     if (req.method === 'POST') {
-        if (!date || !type || !units || !forecast) { res.status(404).json('Missing data') }
+        if (!data || !title || !subtitle || !subject || !width) { res.status(404).json('Missing data') }
         
-        const sendData = await db.collection('infos').insertOne({
-            date, type, units, forecast
+        const sendData = await db.collection('forUnits').insertOne({
+            data, title, subtitle, subject, width
         })
         return res.status(200).json(sendData)
     }
