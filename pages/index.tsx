@@ -4,11 +4,10 @@ import Queries from '../src/components/Queries';
 import axios from 'axios'
 import { useEffect, useState } from 'react';
 import Board from '../src/components/Informations/Board';
-import AddButton from '../src/components/Informations/Helper/AddCard';
 
 export async function getServerSideProps() {
-  const respUnits = await axios.get('http://localhost:3000/api/forUnits')
-  const respCovenants = await axios.get('http://localhost:3000/api/forCovenants')
+  const respUnits = await axios.get('https://job-dtm.vercel.app/api/forUnits')
+  const respCovenants = await axios.get('https://job-dtm.vercel.app/api/forCovenants')
   return {
     props: 
       {
