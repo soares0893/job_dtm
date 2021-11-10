@@ -64,7 +64,14 @@ export default function AddButton(props: AddButtonType) {
         if (props.value == 'covenants') {
             await axios.get(defaultURL + '/api/forCovenants').then(
                 response => {
-                    console.log(response)
+                    //@ts-ignore
+                    array.push('covenants')
+                    //@ts-ignore
+                    for (let i = 0; i < response.data.length; i++) {
+                        //@ts-ignore
+                        array.push(response.data[i])
+                    }
+                    props.onChange(array)
                 }
             )            
         }           
