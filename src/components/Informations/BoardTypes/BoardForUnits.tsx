@@ -6,10 +6,12 @@ export default function BoardForUnits(props) {
         <div className={style.card}>
             {props.value.map(e =>
                 <table style={{gridColumn: e.width}} key={Math.random()}>
-                    <tr><td>{e.data}</td></tr>
-                    <tr><td>{e.title}</td></tr>
-                    <tr><td>{e.subtitle}</td></tr>
-                    <tr><td>{e.subject}</td></tr>
+                    <tbody>
+                        <tr><td>{e.data}</td></tr>
+                        <tr><td>{e.title}</td></tr>
+                        <tr><td>{e.subtitle}</td></tr>
+                        <tr><td>{e.subject}</td></tr>
+                    </tbody>
                 </table>
             )}            
         </div>

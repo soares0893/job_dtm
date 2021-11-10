@@ -8,10 +8,12 @@ const defaultURL = 'https://job-dtm.vercel.app'
 interface AddButtonType {
     value: string
     onClick: (e) => void
+    onChange: (e) => void
 }
 
 export default function AddButton(props: AddButtonType) {
-    let [width, setWidth] = useState('span 1');
+
+    let [width, setWidth] = useState('span 1')
 
     async function save() {
         //@ts-ignore
@@ -29,6 +31,7 @@ export default function AddButton(props: AddButtonType) {
             await axios.post(defaultURL + '/api/forUnits', object).then(
                 response => {
                     console.log(response)
+                    cancel()
                 }
             )
         }
@@ -36,16 +39,25 @@ export default function AddButton(props: AddButtonType) {
             await axios.post(defaultURL + '/api/forCovenants', object).then(
                 response => {
                     console.log(response)
+                    cancel()
                 }
                 )
         }
         props.onClick(false)
     }
-    async function cancel() {        
+    async function cancel() {
+        let array: [] = []
         if (props.value == 'units') {
             await axios.get(defaultURL + '/api/forUnits').then(
                 response => {
-                    console.log(response)
+                    //@ts-ignore
+                    array.push('units')
+                    //@ts-ignore
+                    for (let i = 0; i < response.data.length; i++) {
+                        //@ts-ignore
+                        array.push(response.data[i])
+                    }
+                    props.onChange(array)
                 }
             )
         }
@@ -55,7 +67,7 @@ export default function AddButton(props: AddButtonType) {
                     console.log(response)
                 }
             )            
-        }        
+        }           
         props.onClick(false)
     }
 

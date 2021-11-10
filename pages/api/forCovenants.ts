@@ -1,7 +1,14 @@
 import connect from '../../src/utils/connection';
+import NextCors from 'nextjs-cors';
 
 export default async function Header(req, res) {
     const { data, title, subtitle, subject, width } = req.body
+
+    await NextCors(req, res, {
+      methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+      origin: '*',
+      optionsSuccessStatus: 200,
+    });
 
     if (req.method === "GET") {
         const { db } = await connect()

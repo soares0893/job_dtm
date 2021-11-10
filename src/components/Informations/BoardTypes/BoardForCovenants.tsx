@@ -6,10 +6,12 @@ export default function BoardForCovenants(props) {
         <div className={style.card}>
             {props.value.map(e =>
                 <table style={{gridColumn: e.width}} key={Math.random()}>
-                    <tr><td>{e.data}</td></tr>
-                    <tr><td>{e.title}</td></tr>
-                    <tr><td>{e.subtitle}</td></tr>
-                    <tr><td><pre className={style.subject}>{e.subject}</pre></td></tr>
+                    <tbody>
+                        <tr><td>{e.data}</td></tr>
+                        <tr><td>{e.title}</td></tr>
+                        <tr><td>{e.subtitle}</td></tr>
+                        <tr><td><pre className={style.subject}>{e.subject}</pre></td></tr>
+                    </tbody>
                 </table>
             )}            
         </div>
