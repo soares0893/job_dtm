@@ -80,11 +80,11 @@ export default function AddButton(props: AddButtonType) {
             <label className={style.labelForInputsText} htmlFor="subtitle">Subtítulo </label> <br/><input className={style.inputsText} type='text' id='subtitle'/><br/>
             <label className={style.labelForInputsText} htmlFor="subject">Assunto </label> <br /><textarea id='subject'/><br />
             
-            <span style={{marginBottom: '10px'}}>
-                Tamanhos: 
-                <input className={style.inputsRadio} name="width" onClick={()=> setWidth('span 1')} id="span1" type="radio"/><label htmlFor="um">1</label>
-                <input className={style.inputsRadio} name="width" onClick={()=> setWidth('span 2')} id="span2" type="radio"/><label htmlFor="dois">2</label>
-                <input className={style.inputsRadio} name="width" onClick={()=> setWidth('span 3')} id="span3" type="radio"/><label htmlFor="tres">3</label>
+            <span className={style.width}>
+                    <b>Tamanhos: </b>
+                <label htmlFor="um">1 <input className={style.inputsRadio} name="width" onClick={()=> setWidth('span 1')} id="span1" type="radio"/></label>
+                <label htmlFor="dois">2 <input className={style.inputsRadio} name="width" onClick={()=> setWidth('span 2')} id="span2" type="radio"/></label>
+                <label htmlFor="tres">3 <input className={style.inputsRadio} name="width" onClick={()=> setWidth('span 3')} id="span3" type="radio"/></label>
             </span>
                 
             <span>

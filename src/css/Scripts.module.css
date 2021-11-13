@@ -1,26 +1,21 @@
 
 .form {
-    background-color: pink;
     display: flex;
+    min-width: 300px;
+    max-width: 300px;
+    margin-left: 5px;
+    margin-top: 5px;
     margin-right: 5px;
-    min-width: 290px;
-    max-width: 290px;
-    /* min-height: 95vh; */
-    margin-left: 0.5vw;
-    margin-right: 0.5vw;
 }
 
 .form fieldset {
-    background-color: rgb(28, 57, 55);
-    border-color: rgb(24, 41, 41);
-    color: white;
-    width: 100%;   
-    padding: 0;
+    background-color: rgb(241, 211, 1);
+    border: none;  
+    padding: 0 5px 10px 10px;
     border-radius: 8px;
 }
 
 .form textarea {
-    background-color: rgb(156, 196, 193);
     max-width: 270px; /*CORRIGIR*/
     min-width: 270px; /*CORRIGIR*/
     height: 60px;
@@ -45,32 +40,36 @@
 }
 .tdInput input {
     /* background-color: violet; */
-    background-color: rgb(156, 196, 193);
     border-radius: 5px;
     border: none;
-    height: 21px;
+    height: 20px;
 }
 
 .trFunctions {
-    /* background-color: black; */
-    border-spacing: 28px 5px;
+    display: inline-flex;
+    border-spacing: 24px 5px;
 }
-
-.checkbox {
-    border: 1px solid cadetblue;
+.copyBtn {
+    background-color: black;
+    color: rgb(241, 211, 1);
+    border: none;
     border-radius: 5px;
-    padding: 0 2px;
+    width: 60px;
+    height: 23px;
 }
-.checkbox input {
-    margin: 0;
+.copyBtn:hover {
+    cursor: pointer;
 }
-.checkbox label {
+.copyBtn:active {
+    background-color: tomato;
+
 }
-
-
-
-
-
-
-
-
+.checkbox {
+    background-color: black;
+    color: rgb(241, 211, 1);
+    display: inline-block;
+    width: 60px;
+    height: 21px;
+    border-radius: 5px;
+    padding-left: 3px;
+}

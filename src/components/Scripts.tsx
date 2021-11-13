@@ -126,13 +126,13 @@ export default function Scripts() {
                     <thead >
                         <tr>
                             <td >
-                                <span className={style.checkbox}><label>Ura</label> <input id="uraCheckBox" type="checkbox"/></span>
+                                <span className={style.checkbox}><label>Ura <input id="uraCheckBox" type="checkbox"/></label></span>
                             </td>
                             <td>
-                                <span className={style.checkbox}><label>Amil</label> <input id="amilCheckBox" type="checkbox"/></span>
+                                <span className={style.checkbox}><label>Amil <input id="amilCheckBox" type="checkbox"/></label></span>
                             </td>
                             <td>
-                                <button onClick={copiar}>Copiar</button>
+                                <button className={style.copyBtn} onClick={copiar}>Copiar</button>
                             </td>
                         </tr>
                     </thead>

@@ -1,14 +1,16 @@
 .div {
-    background-color: black;
     position: absolute;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    width: 740px;
-    border-radius: 10px;
+    width: 700px;
+    margin: 10px 5px 5px 22px;
+    grid-column-gap: 10px;
+    grid-row-gap: 1em;
     top: 150px;
 }
 .default {
     background-color: rgb(197, 72, 187);
+    border-radius: 10px;    
     padding: 10px;
 }
 .labelForInputsText {
@@ -31,13 +33,20 @@
 .inputsRadio {
     margin-left: 25px;
 }
+.width {
+}
+.width input {
+    margin: 0 10px 0 0px;
+}
+.width label {
+    margin: 0 0 0 4px;
+}
 
 .default span {
-    background-color: gold;
-    display: inline-block;
     width: 100%;
     text-align: center;
     align-items: center;
+    display: inline-block;
 }
 .default button {
     margin: 2px 6px;

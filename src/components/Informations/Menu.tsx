@@ -7,21 +7,28 @@ interface MenuType {
 
 export default function Menu(props: MenuType) {
 
-    const red = 'red'
-    const violet = 'violet'
-    const tomato = 'tomato'
-    const green = 'green'
+    let [units, setUnits] = useState(true);
+    let [covenants, setCov] = useState(false);
+    let [exams, setExams] = useState(false);
+    let [obs, setObs] = useState(false);
+
+    function selectedMenuButton(id) {
+    if(id == 'units') { setUnits(true), setCov(false), setExams(false), setObs(false) }
+    if(id == 'covenants') { setUnits(false), setCov(true), setExams(false), setObs(false) }
+    if(id == 'exams') { setUnits(false), setCov(false), setExams(true), setObs(false) }
+    if(id == 'obs') { setUnits(false), setCov(false), setExams(false), setObs(true) }
+  }
 
     return (
         <div className={style.menu}>
             {/*@ts-ignore*/}
-            <span id="units" onClick={(e) => props.onClick(e.target)} style={{backgroundColor: red}} className={style.btn}>Unidades</span>
+            <span id="units" onClick={(e) => {props.onClick(e.target), selectedMenuButton(e.target.id)}} className={units == true ? (style.selectedBTN) : style.notSelectedBTN}>Unidades</span>
             {/*@ts-ignore*/}
-            <span id="covenants" onClick={(e) => props.onClick(e.target)} style={{ backgroundColor: violet }} className={style.btn}>Convênios</span>
+            <span id="covenants" onClick={(e) => {props.onClick(e.target), selectedMenuButton(e.target.id)}} className={covenants == true ? (style.selectedBTN) : style.notSelectedBTN}>Convênios</span>
             {/*@ts-ignore*/}
-            <span id="exams" onClick={(e) => props.onClick(e.target)} style={{ backgroundColor: green }} className={style.btn}>Exames</span>
+            <span id="exams" onClick={(e) => {props.onClick(e.target), selectedMenuButton(e.target.id)}} className={exams == true ? (style.selectedBTN) : style.notSelectedBTN}>Exames</span>
             {/*@ts-ignore*/}
-            <span id="personal" onClick={(e) => props.onClick(e.target)} style={{ backgroundColor: tomato }} className={style.btn}>Pessoal</span>
+            <span id="obs" onClick={(e) => {props.onClick(e.target), selectedMenuButton(e.target.id)}} className={obs == true ? (style.selectedBTN) : style.notSelectedBTN}>Observações</span>
         </div>
     )
 }

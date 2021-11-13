@@ -1,11 +1,16 @@
 .board {
-    background-color: yellow;
-    width: 740px;
+    background-color: white;
+    margin: 5px 5px 5px 5px;
+    border-radius: 5px;
+    width: 755px;
 }
 .boardChild {
+    margin: 10px 5px 5px 5px;
     padding: 5px;
     border-radius: 10px;
-    min-height: 560px;
+    min-height: 500px;
+    max-height: 500px;
+    overflow: auto;
 }
 .card {
     display: grid;
@@ -16,12 +21,14 @@
     margin: 0 5px 5px 5px;
 }
 .card table{
-    background-color: chartreuse;
+    background: linear-gradient(rgb(214, 210, 210), rgb(241, 211, 1));
+    background-color: black;
     margin: 0 5px 5px 5px;
+    border-radius: 5px;
     width: 100%;
 }
 .card table td {
-    background-color: coral;
+    background: linear-gradient(rgb(241, 211, 1), rgb(243, 236, 236));
     text-align: center;
     border: 1px solid black;
 }
@@ -30,17 +37,17 @@
     max-width: 52vw;
 }
 .addButton {
-    background-color: rgb(28, 57, 55);
-    color: whitesmoke;
+    background-color: black;
+    color: rgb(241, 211, 1);
+    position: absolute;
     font-size: xx-large;
     width: 50px;
     height: 50px;
     border-radius: 50%;
     align-items: center;
     justify-content: center;
-    float: right;
     cursor: pointer;
     border: none;
     margin-top: -60px;
-    margin-right: 10px;
+    margin-left: 680px;
 }

@@ -30,13 +30,13 @@ export default function Board(props) {
         <div className={style.board}>
             <Menu onClick={(e) => {setId(e.id), setColor(e.style.backgroundColor)}} />
             
-            <div className={style.boardChild} style={{backgroundColor: colorFromMenu}}>
+            <div className={style.boardChild} /* style={{backgroundColor: colorFromMenu}} */>
                 {
                 idFromMenu == 'covenants' ? <BoardForCovenants value={covenants} /> :
                 
-                idFromMenu == 'personal' ? <BoardPersonal /> :
-                
-                idFromMenu == 'exams' ? <BoardForExams /> : <BoardForUnits value={units}/>
+                idFromMenu == 'exams' ? <BoardForExams /> :
+                            
+                idFromMenu == 'obs' ? <BoardPersonal /> : <BoardForUnits value={units}/>
                 }
             </div>
             {showCard ? <AddCard value={idFromMenu} onChange={(e) => updateArray(e)} onClick={(e) => setShowcard(e) }/> : ''}

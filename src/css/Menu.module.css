@@ -1,20 +1,42 @@
 .menu {
     display: flex;
-    justify-content: center; 
     height: 40px;
-}
-
-.btn {
-    /* background-image: linear-gradient(to top, #A34828, #d48c71); */
-    color: whitesmoke;
-    text-align: center;
+    justify-content: center; 
     align-items: center;
+}
+.selectedBTN {
+    margin-top: 10px;
+    height: 35px;
     justify-content: center;
-    border-radius: 10px 10px 0 0;
-    margin: 5px 4px 0 4px;
+    align-items: center;
+    display: inline-flex;
     width: 120px;
     cursor: pointer;
     transition: all .2s ease-in-out;
+
+    background-color: black;
+    color: rgb(241, 211, 1);
+    font-size: larger;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-right: 15px;
+}
+.notSelectedBTN {
+    margin-top: 10px;
+    height: 35px;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    width: 120px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    background-color: rgb(243, 227, 107);
+
+    border: 1px solid rgb(243, 227, 107);
+    color: black;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-right: 15px;
 }
 
 .btn:hover {
