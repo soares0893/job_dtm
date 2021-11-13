@@ -15,6 +15,25 @@ export default function AddButton(props: AddButtonType) {
 
     let [width, setWidth] = useState('span 1')
 
+    async function getDataWithAxios(
+        from: string,
+        address: string,
+        toArray: string[],
+        func: (e) => void
+    ) {
+        await axios.get(defaultURL + address).then(
+            response => {
+                toArray.push(from)
+                let respArray: any = response.data
+                for (let i = 0; i < respArray.length; i++) {
+                    toArray.push(respArray[i])
+                }
+                func(toArray)
+            }
+        )
+
+    }
+
     async function save() {
         //@ts-ignore
         const data = document.querySelector("#data").value
@@ -25,13 +44,15 @@ export default function AddButton(props: AddButtonType) {
         //@ts-ignore
         const subject = document.querySelector("#subject").value
 
-        const object = {data, title, subtitle, subject, width}
+        const object = { data, title, subtitle, subject, width }
+        let array: [] = []
         
         if (props.value == 'units') {
             await axios.post(defaultURL + '/api/forUnits', object).then(
                 response => {
                     console.log(response)
-                    cancel()
+                    getDataWithAxios(props.value, '/api/forUnits', array, (e) => props.onChange(array))
+                    console.log('getDataWithAxios is working perfectly for Units.')
                 }
             )
         }
@@ -39,42 +60,15 @@ export default function AddButton(props: AddButtonType) {
             await axios.post(defaultURL + '/api/forCovenants', object).then(
                 response => {
                     console.log(response)
-                    cancel()
+                    getDataWithAxios(props.value, '/api/forCovenants', array, (e) => props.onChange(array))
+                    console.log('getDataWithAxios is working perfectly for Covenants.') 
                 }
                 )
         }
         props.onClick(false)
     }
     async function cancel() {
-        let array: [] = []
-        if (props.value == 'units') {
-            await axios.get(defaultURL + '/api/forUnits').then(
-                response => {
-                    //@ts-ignore
-                    array.push('units')
-                    //@ts-ignore
-                    for (let i = 0; i < response.data.length; i++) {
-                        //@ts-ignore
-                        array.push(response.data[i])
-                    }
-                    props.onChange(array)
-                }
-            )
-        }
-        if (props.value == 'covenants') {
-            await axios.get(defaultURL + '/api/forCovenants').then(
-                response => {
-                    //@ts-ignore
-                    array.push('covenants')
-                    //@ts-ignore
-                    for (let i = 0; i < response.data.length; i++) {
-                        //@ts-ignore
-                        array.push(response.data[i])
-                    }
-                    props.onChange(array)
-                }
-            )            
-        }           
+        console.log('function for cancel')         
         props.onClick(false)
     }
 
@@ -101,3 +95,22 @@ export default function AddButton(props: AddButtonType) {
         </div>
     )
 }
+
+
+
+
+
+/**
+ * await axios.get(defaultURL + '/api/forUnits').then(
+                response => {
+                    //@ts-ignore
+                    array.push('units')
+                    //@ts-ignore
+                    for (let i = 0; i < response.data.length; i++) {
+                        //@ts-ignore
+                        array.push(response.data[i])
+                    }
+                    props.onChange(array)
+                }
+            )
+ */
