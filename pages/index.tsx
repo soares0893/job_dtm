@@ -11,11 +11,13 @@ import Board from '../src/components/Informations/Board';
 export async function getServerSideProps() {
   const respUnits = await axios.get('https://job-dtm.vercel.app/api/forUnits')
   const respCovenants = await axios.get('https://job-dtm.vercel.app/api/forCovenants')
+  const respExams = await axios.get('https://job-dtm.vercel.app/api/forExams')
   return {
     props: 
       {
         units: respUnits.data,
-        cov: respCovenants.data
+        cov: respCovenants.data,
+        exams: respExams.data
       }
     
   }
@@ -64,48 +66,5 @@ export default function Home(props) {
       }
       </div>
     </div>    
-  )
-    
+  )   
 }
-
-
-
-
-
-/**
- * return (
-    <div style={{ display: "flex" }}>
-      <div style={{marginTop: '40px', paddingTop: '0px'}}><Scripts /></div>
-      <div style={{marginTop: '40px'}}><Queries /></div>
-      <div><Board value={props}/></div>
-    </div>    
-  )
- * 
-    <div style={{
-      display: 'flex'
-    }}>
-      Usando positions com CSS
-      <div style={{
-        backgroundColor: 'blue',
-        minHeight: '200px',
-        minWidth: '200px',
-
-      }}>blue</div>
-      <div style={{
-        backgroundColor: 'green',
-        minHeight: '150px',
-        maxHeight: '150px',
-        minWidth: '150px',
-        maxWidth: '150px',
-        
-      }}>green</div>
-      <div style={{
-        backgroundColor: 'yellow',
-        minHeight: '100px',
-        maxHeight: '100px',
-        minWidth: '100px',
-        maxWidth: '100px',
-        
-      }}>yellow</div>
-    </div>
- */

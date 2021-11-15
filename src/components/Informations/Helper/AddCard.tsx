@@ -65,6 +65,15 @@ export default function AddButton(props: AddButtonType) {
                 }
                 )
         }
+        if (props.value == 'exams') {
+            await axios.post(defaultURL + '/api/forExams', object).then(
+                response => {
+                    console.log(response)
+                    getDataWithAxios(props.value, '/api/forExams', array, (e) => props.onChange(array))
+                    console.log('getDataWithAxios is working perfectly for Exams.')
+                }
+            )
+        }
         props.onClick(false)
     }
     async function cancel() {
@@ -95,22 +104,3 @@ export default function AddButton(props: AddButtonType) {
         </div>
     )
 }
-
-
-
-
-
-/**
- * await axios.get(defaultURL + '/api/forUnits').then(
-                response => {
-                    //@ts-ignore
-                    array.push('units')
-                    //@ts-ignore
-                    for (let i = 0; i < response.data.length; i++) {
-                        //@ts-ignore
-                        array.push(response.data[i])
-                    }
-                    props.onChange(array)
-                }
-            )
- */

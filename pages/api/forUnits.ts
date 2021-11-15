@@ -33,5 +33,5 @@ export default async function handler(req, res) {
         return res.status(200).json(sendData)
     }
 
-  res.status(404).json('Not allowed')
+  res.status(404).json({message: 'Not Allowed'})
 }

@@ -16,14 +16,14 @@ export default function Board(props) {
 
     let [units, setUnits] = useState(props.value.units)
     let [covenants, setCovenants] = useState(props.value.cov)
-    let [exams, setExams] = useState()
-    let [personal, setPersonal] = useState()
+    let [exams, setExams] = useState(props.value.exams)
+    let [obs, setObs] = useState()
 
     function updateArray(array) {
         if(array[0] == 'units') { array.splice(0, 1), setUnits(array) }
         if(array[0] == 'covenants') { array.splice(0, 1), setCovenants(array) }
         if(array[0] == 'exams') { array.splice(0, 1), setExams(array) }
-        if(array[0] == 'personal') { array.splice(0, 1), setPersonal(array) }
+        if(array[0] == 'personal') { array.splice(0, 1), setObs(array) }
     }
 
     return (
@@ -34,7 +34,7 @@ export default function Board(props) {
                 {
                 idFromMenu == 'covenants' ? <BoardForCovenants value={covenants} /> :
                 
-                idFromMenu == 'exams' ? <BoardForExams /> :
+                idFromMenu == 'exams' ? <BoardForExams value={exams}/> :
                             
                 idFromMenu == 'obs' ? <BoardPersonal /> : <BoardForUnits value={units}/>
                 }
