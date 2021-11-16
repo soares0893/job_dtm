@@ -5,7 +5,7 @@ import style from '../../../css/Card.module.css';
 export default function BoardForUnits(props) {
 
     async function deleteById(title) {
-        await axios.delete('http://localhost:3000/api/forUnits', { data: { title: title } }).then(
+        await axios.delete('https://job-dtm.vercel.app/api/forUnits', { data: { title: title } }).then(
             response => {
                 console.log(response)
                 props.delete('forUnits')

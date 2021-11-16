@@ -7,7 +7,7 @@ export default function BoardForUnits(props) {
     console.log(props.value)
 
     async function deleteById(title) {
-        await axios.delete('http://localhost:3000/api/forExams', { data: { title: title } }).then(
+        await axios.delete('https://job-dtm.vercel.app/api/forExams', { data: { title: title } }).then(
             response => {
                 console.log(response)
                 props.delete('forExams')

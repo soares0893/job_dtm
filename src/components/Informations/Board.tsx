@@ -27,7 +27,7 @@ export default function Board(props) {
     }
 
     async function updateAfterDeleted(local) {
-        await axios.get('http://localhost:3000/api/' + local).then(
+        await axios.get('https://job-dtm.vercel.app/api/' + local).then(
             response => {
                 if(local == 'forUnits') { setUnits(response.data) }
                 if(local == 'forCovenants') { setCovenants(response.data) }

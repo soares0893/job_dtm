@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import style from '../../../css/AddButton.module.css';
 
-const defaultURL = 'http://localhost:3000'
+const defaultURL = 'https://job-dtm.vercel.app'
 
 interface AddButtonType {
     value: string
