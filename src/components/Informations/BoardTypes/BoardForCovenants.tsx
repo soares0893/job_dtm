@@ -7,6 +7,7 @@ export default function BoardForCovenants(props) {
         await axios.delete('http://localhost:3000/api/forCovenants', { data: { title: title } }).then(
             response => {
                 console.log(response)
+                props.delete('forCovenants')
             }
         )
     }

@@ -11,15 +11,16 @@ import Board from '../src/components/Informations/Board';
 export async function getServerSideProps() {
   const respUnits = await axios.get('https://job-dtm.vercel.app/api/forUnits')
   const respCovenants = await axios.get('https://job-dtm.vercel.app/api/forCovenants')
-  const respExams = await axios.get('https://job-dtm.vercel.app/api/forExams')
+  const respExams = await axios.get('http://localhost:3000/api/forExams')
+  
   return {
     props: 
       {
         units: respUnits.data,
         cov: respCovenants.data,
-        exams: respExams.data
-      }
-    
+        exams: respExams.data,
+        obs: respExams.data
+      }    
   }
 }
 

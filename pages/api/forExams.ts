@@ -12,16 +12,16 @@ export default async function handler(req, res) {
     });
 
     if (req.method === 'GET') {
-        const array = db.collection('forExams').find().toArray()
+        const array = await db.collection('forExams').find().toArray()
         return res.status(200).json(array)
     }
         
     if (req.method === 'POST') {
         if(!data || !title || !subtitle || !subject || !width) { return res.status(404).json({message: 'Missing data.'})}
         const object = {data, title, subtitle, subject, width}
-        const postDB = db.collection('forExams').insertOne(object)
+        const postDB = await db.collection('forExams').insertOne(object)
 
-        return res.status(200).json({return : postDB})
+        return res.status(200).json(postDB)
     }
         
     if (req.method === 'PUT') {
@@ -29,6 +29,9 @@ export default async function handler(req, res) {
     }
         
     if (req.method === 'DELETE') {
+        const title = req.body
+        const deletedOne = await db.collection('forExams').deleteOne({'title': title.title})
+        return res.status(200).json(deletedOne)
         
     }
 

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import style from '../../../css/AddButton.module.css';
 
-const defaultURL = 'https://job-dtm.vercel.app'
+const defaultURL = 'http://localhost:3000'
 
 interface AddButtonType {
     value: string
@@ -11,7 +11,7 @@ interface AddButtonType {
     onChange: (e) => void
 }
 
-export default function AddButton(props: AddButtonType) {
+export default function AddCard(props: AddButtonType) {
 
     let [width, setWidth] = useState('span 1')
 
@@ -50,7 +50,6 @@ export default function AddButton(props: AddButtonType) {
         if (props.value == 'units') {
             await axios.post(defaultURL + '/api/forUnits', object).then(
                 response => {
-                    console.log(response)
                     getDataWithAxios(props.value, '/api/forUnits', array, (e) => props.onChange(array))
                     console.log('getDataWithAxios is working perfectly for Units.')
                 }
@@ -59,7 +58,6 @@ export default function AddButton(props: AddButtonType) {
         if (props.value == 'covenants') {
             await axios.post(defaultURL + '/api/forCovenants', object).then(
                 response => {
-                    console.log(response)
                     getDataWithAxios(props.value, '/api/forCovenants', array, (e) => props.onChange(array))
                     console.log('getDataWithAxios is working perfectly for Covenants.') 
                 }
@@ -68,7 +66,6 @@ export default function AddButton(props: AddButtonType) {
         if (props.value == 'exams') {
             await axios.post(defaultURL + '/api/forExams', object).then(
                 response => {
-                    console.log(response)
                     getDataWithAxios(props.value, '/api/forExams', array, (e) => props.onChange(array))
                     console.log('getDataWithAxios is working perfectly for Exams.')
                 }
