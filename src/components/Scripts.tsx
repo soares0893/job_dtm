@@ -41,6 +41,7 @@ export default function Scripts() {
             array.push(tr("2", "Convênio", style.tdLabel, style.tdInput));
             array.push(tr("3", "Peso", style.tdLabel, style.tdInput));
             array.push(tr("4", "Preparos", style.tdLabel, style.tdInput));
+            array.push(tr("4", "Ped. Datado", style.tdLabel, style.tdInput));
 
             for (var i = 1; i < found.length; i++){
                 array.push(tr(i*8, found[i], style.tdLabel, style.tdInput, 'não'))
