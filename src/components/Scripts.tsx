@@ -90,7 +90,7 @@ export default function Scripts() {
         }
         //@ts-ignore
         if (amilCheckBox.checked) {
-            data += ` Ciente enviar dados para o email: amilcm@grupopardini.com.br e, caso não receba token até dia do exame, retornar contato.`            
+            data += ` Ciente enviar dados para o email: amilcm@grupopardini.com.br`            
         }
         
         //@ts-ignore
