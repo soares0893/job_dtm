@@ -95,7 +95,7 @@ export default function Scripts() {
         
         //@ts-ignore
         if (uraCheckBox.checked) {
-            data += ` Realizado transferência para URA.`
+            data += ` Indicação clínica está ilegível. Orientado enviar foto pelo whatdapp.`
         }
 
 
@@ -127,7 +127,7 @@ export default function Scripts() {
                     <thead >
                         <tr>
                             <td >
-                                <span className={style.checkbox}><label>Ura <input id="uraCheckBox" type="checkbox"/></label></span>
+                                <span className={style.checkbox}><label>Whatsapp <input id="uraCheckBox" type="checkbox"/></label></span>
                             </td>
                             <td>
                                 <span className={style.checkbox}><label>Amil <input id="amilCheckBox" type="checkbox"/></label></span>
